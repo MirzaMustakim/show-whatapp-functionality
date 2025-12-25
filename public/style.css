@@ -1,0 +1,25 @@
+.container {
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    display: inline-block;
+    margin: 10px;
+    padding-left: 20px;
+}
+.container:hover{
+    box-shadow: 4px 8px 8px black;
+}
+.msg {
+    padding: 5px;
+    background-color: blue;
+}
+.to {
+    font-style: italic;
+}
+.from{
+    font-style: italic;
+}
+button{
+    text-decoration: none;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>All posts</h2>
+    <button style="text-decoration: none;"><a href="chats/new" >Create new</a></button>
+    <br>
+  <% for ( let chat of chats) {  %>
+    <div class="container">
+  <p>Id : <%= chat._id %></p>
+  <h6 class="from">From : <%= chat.from %></h6>
+  <p class="msg"><b>Message : <%= chat.msg %></b></p>
+  <h6 class="to">To : <%= chat.to %></h6>
+  <hr>
+<p><%= chat.date.toString().split(' ')[4] %></p>
+<p><%= chat.date.toString().split(' ').slice(0 , 4).join(' ') %></p>
+
+<a href="/chats/<%= chat._id %>/edit">Edit</a> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<br>
+<br>
+<form action="/chats/<%=chat._id %>?_method=Delete" method="post">
+  <button>Delete</button>
+</form>
+
+
+<br>
+    </div>
+    <br>
+    <br>
+ <% }  %>
+
+</body>
+</html>
